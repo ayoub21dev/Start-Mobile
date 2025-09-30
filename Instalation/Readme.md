@@ -1,0 +1,1 @@
+this the lien: C:\Users\Solicode\AppData\Local\Android\Sdk
