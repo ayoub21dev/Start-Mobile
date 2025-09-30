@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestProjct</string> 
+    
+    <string name="btn_counter">اضغط هنا</string> 
+    
+    <string name="msg_hello">مرحباً بالعداد</string> 
+</resources>
