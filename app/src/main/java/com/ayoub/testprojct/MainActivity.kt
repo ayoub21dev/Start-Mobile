@@ -3,47 +3,61 @@ package com.ayoub.testprojct
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-
+import androidx.compose.ui.unit.dp
+import com.ayoub.testprojct.ui.DireBonjourSection
+import com.ayoub.testprojct.ui.theme.TestProjctTheme
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.Alignment
+import com.ayoub.testprojct.ui.CompteurSection
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { App() }
-    }
-}
-
-@Composable
-fun App() {
-    MaterialTheme {
-        Greeting()
-    }
-}
-
-@Composable
-fun Greeting() {
-    var count by remember { mutableStateOf(0) }
-
-    // Box = conteneur qui permet d'aligner son contenu
-    Box(
-        modifier = Modifier.fillMaxSize(),              // occupe tout l'écran
-        contentAlignment = Alignment.Center             // centre le contenu
-    ) {
-        Button(onClick = { count++ }) {
-            Text("Hello, count = $count")
+        setContent {
+            TestProjctTheme {
+                MainScreen()
+            }
         }
     }
 }
-@Preview(showBackground = true)
+
+
 @Composable
-fun PreviewApp() {
-    App()
+fun MainScreen() {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+                .verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.spacedBy(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            DireBonjourSection()
+            CompteurSection()
+        }
+    }
+}
+
+
+@Preview(showBackground = true, widthDp = 360)
+@Composable
+fun PreviewMainScreen() {
+    TestProjctTheme {
+        MainScreen()
+    }
 }
