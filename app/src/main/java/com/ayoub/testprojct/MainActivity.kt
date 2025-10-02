@@ -13,19 +13,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ayoub.testprojct.ui.DireBonjourSection
-import com.ayoub.testprojct.ui.theme.TestProjctTheme
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.Alignment
 import com.ayoub.testprojct.ui.CompteurSection
+import com.ayoub.testprojct.ui.theme.HelloCounterTheme
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TestProjctTheme {
+            HelloCounterTheme {
                 MainScreen()
             }
         }
@@ -57,7 +57,8 @@ fun MainScreen() {
 @Preview(showBackground = true, widthDp = 360)
 @Composable
 fun PreviewMainScreen() {
-    TestProjctTheme {
+    HelloCounterTheme {
         MainScreen()
     }
 }
+
